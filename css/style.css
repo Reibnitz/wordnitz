@@ -1,0 +1,112 @@
+html, body {
+    height:100%;
+}
+
+header {
+    border-bottom: 1px solid #CCCCCC;
+    height: 60px;
+    display:flex;
+    justify-content: center;
+}
+
+header h1 {
+    font-family: 'Newsreader', serif;
+    font-size:36px;
+    margin: 10px 0 6px;
+    align-self: center;
+    font-weight: bold;
+}
+
+main {
+    display:flex;
+    flex-direction: column;
+    margin: 0 auto;
+    height:calc(100% - 61px);
+}
+
+.container-jogo {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.linha-tentativa {
+    display:flex;
+    justify-content:center;
+    gap:5px;
+    margin-bottom:5px;
+}
+
+.letra {
+    width:60px;
+    height:60px;
+    border:2px solid #CCCCCC;
+    border-radius:3px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span {
+    font-family: Calibri;
+    font-weight: 800;
+    font-size: 40px;
+}
+
+button {
+    width: 50px;
+    height: 60px;
+    font-weight:bold;
+    border: 0;
+    border-radius: 5px;
+    transition:0.3s;
+    background-color:#EEEEEE;
+}
+
+button:hover {
+    box-shadow: 0px 0px 5px 1px #AAAAAA;
+    cursor: pointer;
+}
+
+.enter, .backspace{
+    width: 75px;
+}
+
+.backspace{
+    font-size: 1.3em;
+}
+
+.linha-teclado {
+    display:flex;
+    justify-content:center;
+    column-gap:5px;
+    margin-bottom:5px;
+}
+
+.destaque {
+    box-shadow: 0px 0px 5px 1px #AAAAAA;
+}
+
+/* cores */
+
+.amarelo {
+    background-color:#ffe23d;
+    color: white;
+    border:2px solid #ffe23d;
+    border-radius:3px;
+}
+
+.verde {
+    background-color:#60dd60;
+    color:white;
+    border:2px solid #60dd60;
+    border-radius:3px;
+}
+
+.cinza {
+    background-color:#DDDDDD;
+    color:white;
+    border:2px solid #DDDDDD;
+    border-radius:3px;
+}

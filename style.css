@@ -1,0 +1,13 @@
+body {
+    width: 940px;
+    margin: 0 auto;
+}
+
+.container-teclado {
+    width: 940px;
+    margin:0 auto;
+}
+
+p {
+    text-align: center;
+}
