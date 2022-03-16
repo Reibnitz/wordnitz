@@ -111,6 +111,11 @@ button:hover {
     border-radius:3px;
 }
 
+.botao-cinza {
+    background-color:#666666;
+    color:white;
+}
+
 .botao-amarelo {
     background-color: #ffe23d;
     color:white;
@@ -118,10 +123,5 @@ button:hover {
 
 .botao-verde {
     background-color:#60dd60;
-    color:white;
-}
-
-.botao-cinza {
-    background-color:#666666;
     color:white;
 }

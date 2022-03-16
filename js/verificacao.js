@@ -1,16 +1,28 @@
-var palavra = "LUCAS";
-
-
 function verificarPalpite() {
-    var palpite = '';
-    let n = 0;
+    let palpite = gerarPalpite().toLowerCase();
+    console.log(palpite)
+    if (listaSemAcento.includes(palpite)) {
+        alterarCores();
+        voltarAcentos();
+        i++;
+        j = 0;
+    } else {return}
+}
+
+function gerarPalpite() {
+    let palpite = '';    
 
     for (x of linhas[i]) {
         palpite += x.innerText;
     }
+    return palpite;
+}
+
+function alterarCores() {
+    let palpite = gerarPalpite();
 
     let letrasUsadas = [];
-
+    let n = 0;
     for (x of palpite) { // verificar verde
         if (x == palavra[n]) {
             linhas[i][n].parentElement.classList.add("verde");
@@ -58,3 +70,4 @@ function verificarDuplicatas(letra, palavra, letrasUsadas) {
 
     return contaDuplicatas;
 }
+

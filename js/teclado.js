@@ -1,5 +1,5 @@
 document.querySelector(".teclado").addEventListener("click", usarTecladoVirtual);
-window.addEventListener("keydown",usarTecladoFisico);
+window.addEventListener("keydown", usarTecladoFisico);
 
 const linhas = [
     [],
@@ -30,18 +30,16 @@ function usarTecladoVirtual(event) {
         linhas[i][j].parentElement.classList.remove("destaque");
     }
 
-    if (alvo.classList.contains("key")) {
+    if (alvo.classList.contains("key") && j < linhas[i].length) {
         linhas[i][j].innerText = alvo.innerHTML;
         j++;
-    } else if (alvo.classList.contains("backspace") && i > 0) {
-        i--;
+    } else if (alvo.classList.contains("backspace") && j > 0) {
+        j--;
         linhas[i][j].innerText = "";
-    } else if (alvo.classList.contains("backspace") && i == 0) {
+    } else if (alvo.classList.contains("backspace") && j == 0) {
         linhas[i][j].innerText = "";
     } else if (alvo.classList.contains("enter")) {
         verificarPalpite();
-        i++;
-        j = 0;
     }
     
     if (j < linhas[i].length) {
@@ -54,7 +52,7 @@ function usarTecladoFisico(event) {
         linhas[i][j].parentElement.classList.remove("destaque");
     }
 
-    if(event.keyCode >= 65 && event.keyCode <= 90) {
+    if(event.keyCode >= 65 && event.keyCode <= 90 && j < linhas[i].length) {
         linhas[i][j].innerText = event.key.toUpperCase();
         j++;
     } else if (event.key == "Backspace" && j > 0) {
@@ -64,8 +62,6 @@ function usarTecladoFisico(event) {
         linhas[i][j].innerText = "";
     } else if (event.key == "Enter") {
         verificarPalpite();
-        i++;
-        j = 0;
     }
     if (j < linhas[i].length) {
         linhas[i][j].parentElement.classList.add("destaque");
