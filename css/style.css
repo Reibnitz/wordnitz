@@ -110,3 +110,18 @@ button:hover {
     border:2px solid #DDDDDD;
     border-radius:3px;
 }
+
+.botao-amarelo {
+    background-color: #ffe23d;
+    color:white;
+}
+
+.botao-verde {
+    background-color:#60dd60;
+    color:white;
+}
+
+.botao-cinza {
+    background-color:#666666;
+    color:white;
+}

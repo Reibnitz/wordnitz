@@ -14,9 +14,11 @@ function verificarPalpite() {
     for (x of palpite) { // verificar verde
         if (x == palavra[n]) {
             linhas[i][n].parentElement.classList.add("verde");
+            document.querySelector(`#${linhas[i][n].innerText}`).classList.add("botao-verde");
             letrasUsadas.push(x);
         } else if(!palavra.includes(x)) {
-            linhas[i][n].parentElement.classList.add("cinza")
+            linhas[i][n].parentElement.classList.add("cinza");
+            document.querySelector(`#${linhas[i][n].innerText}`).classList.add("botao-cinza");
         }
         n++
     }
@@ -27,11 +29,13 @@ function verificarPalpite() {
 
         if (palavra.includes(x) && duplicatasPalpite>0 && !linhas[i][n].parentElement.classList.contains("verde")) {
             linhas[i][n].parentElement.classList.add("amarelo")
+            document.querySelector(`#${linhas[i][n].innerText}`).classList.add("botao-amarelo");
             letrasUsadas.push(x);
         } else if(duplicatasPalpite<=0
                 && !linhas[i][n].parentElement.classList.contains("amarelo")
                 && !linhas[i][n].parentElement.classList.contains("verde")) {
-            linhas[i][n].parentElement.classList.add("cinza")
+            linhas[i][n].parentElement.classList.add("cinza");
+            document.querySelector(`#${linhas[i][n].innerText}`).classList.add("botao-cinza");
         }
         n++
     }
