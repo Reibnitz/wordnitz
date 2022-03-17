@@ -26,19 +26,33 @@ linhas[i][j].parentElement.classList.add("destaque");
 
 function usarTecladoVirtual(event) {
     var alvo = event.target;
+
     if (j < linhas[i].length) {
         linhas[i][j].parentElement.classList.remove("destaque");
     }
 
-    if (alvo.classList.contains("key") && j < linhas[i].length) {
+    if (alvo.classList.contains("key") && j < linhas[i].length-1) {
         linhas[i][j].innerText = alvo.innerHTML;
         j++;
-    } else if (alvo.classList.contains("backspace") && j > 0) {
+    } else if (alvo.classList.contains("key") && j == linhas[i].length-1) {
+        linhas[i][j].innerText = alvo.innerHTML;
+    }
+
+    if (alvo.classList.contains("backspace") && j > 0 && j == linhas[i].length-1 && !linhas[i][j].innerText == "") {
+        linhas[i][j].parentElement.classList.remove("animado")
+        linhas[i][j].innerText = "";
+        j--;
+    } else if (alvo.classList.contains("backspace") && j == 0) {
+        linhas[i][j].parentElement.classList.remove("animado")
+        linhas[i][j].innerText = "";
+    } else if (alvo.classList.contains("backspace") && j > 0 && j < linhas[i].length) {
+        linhas[i][j].parentElement.classList.remove("animado")
+        linhas[i][j].innerText = "";
         j--;
         linhas[i][j].innerText = "";
-    } else if (alvo.classList.contains("backspace") && j == 0) {
-        linhas[i][j].innerText = "";
-    } else if (alvo.classList.contains("enter")) {
+    }
+    
+    if (alvo.classList.contains("enter")) {
         verificarPalpite();
     }
     
@@ -52,17 +66,31 @@ function usarTecladoFisico(event) {
         linhas[i][j].parentElement.classList.remove("destaque");
     }
 
-    if(event.keyCode >= 65 && event.keyCode <= 90 && j < linhas[i].length) {
+    if(event.keyCode >= 65 && event.keyCode <= 90 && j < linhas[i].length-1) {
         linhas[i][j].innerText = event.key.toUpperCase();
         j++;
-    } else if (event.key == "Backspace" && j > 0) {
+    } else if(event.keyCode >= 65 && event.keyCode <= 90 && j == linhas[i].length-1){
+        linhas[i][j].innerText = event.key.toUpperCase();
+    }
+    
+    if (event.key == "Backspace" && j > 0 && j == linhas[i].length-1 && !linhas[i][j].innerText == "") {
+        linhas[i][j].parentElement.classList.remove("animado")
+        linhas[i][j].innerText = "";
+        j--;
+    } else if (event.key == "Backspace" && j == 0) {
+        linhas[i][j].parentElement.classList.remove("animado")
+        linhas[i][j].innerText = "";
+    } else if (event.key == "Backspace" && j > 0 && j < linhas[i].length) {
+        linhas[i][j].parentElement.classList.remove("animado")
+        linhas[i][j].innerText = "";
         j--;
         linhas[i][j].innerText = "";
-    } else if (event.key == "Backspace" && j == 0) {
-        linhas[i][j].innerText = "";
-    } else if (event.key == "Enter") {
+    }
+    
+    if (event.key == "Enter") {
         verificarPalpite();
     }
+
     if (j < linhas[i].length) {
         linhas[i][j].parentElement.classList.add("destaque");
     }

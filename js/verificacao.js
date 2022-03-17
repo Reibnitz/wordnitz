@@ -6,7 +6,16 @@ function verificarPalpite() {
         voltarAcentos();
         i++;
         j = 0;
-    } else {return}
+    } else { 
+        for (x of linhas[i]) {
+            x.parentElement.classList.add("animado");
+        }
+        setTimeout(function(){
+            for (x of linhas[i]) {
+                x.parentElement.classList.remove("animado")
+            }
+        }, 100);
+        }
 }
 
 function gerarPalpite() {

@@ -46,6 +46,20 @@ main {
     display:flex;
     justify-content: center;
     align-items: center;
+    transition:0.1s;
+}
+
+.animado {
+    animation: 0.15s balanca;
+}
+
+@keyframes balanca {
+    0% { transform: translate(2px); }
+    20% { transform: translate(-2px); }
+    40% { transform: translate(-2px); }
+    60% { transform: translate(2px); }
+    80% { transform: translate(1px); }
+    100% { transform: translate(-1px); }
 }
 
 span {
@@ -95,6 +109,7 @@ button:hover {
     color: white;
     border:2px solid #ffe23d;
     border-radius:3px;
+    animation: 1s gira;
 }
 
 .verde {
@@ -102,6 +117,7 @@ button:hover {
     color:white;
     border:2px solid #60dd60;
     border-radius:3px;
+    animation: 1s gira;
 }
 
 .cinza {
@@ -109,11 +125,19 @@ button:hover {
     color:white;
     border:2px solid #DDDDDD;
     border-radius:3px;
+    animation: 1s gira;
+}
+
+@keyframes gira {
+    0% { transform: rotateX(0deg); }
+    50% { transform: rotateX(90deg); }
+    100% { transform: rotateX(0deg); }
 }
 
 .botao-cinza {
     background-color:#666666;
     color:white;
+    
 }
 
 .botao-amarelo {
